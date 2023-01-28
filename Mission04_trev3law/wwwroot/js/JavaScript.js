@@ -49,5 +49,16 @@ $("#submit").click(function () {
 
 $("#submit").click(function () {
     $("#finalGrade").show()
-    $("#finalGrade").html() += (iFinalGrade + ' - ' + sLetterGrade)
+    $("#finalGrade").html('<b>Final Grade: </b>' + iFinalGrade + '% - ' + sLetterGrade)
 })
+
+$("#submit").click(function () {
+    $("#reload").show()
+})
+
+function load() {
+    $("#inputForm").show()
+    $("#gradeCalculator").show()
+    $("#finalGrade").hide()
+    $("#reload").hide()
+}

@@ -27,9 +27,10 @@
         <li>Cybersecurity</li>
     </ol>
     <br /><br />
-    <h3 id="gradeCalculator">Grade Calculator:</h3>
-    <h3 onload="hide" id="finalGrade">Final Grade: </h3>
-    <form id="inputForm">
+    <h3 id="gradeCalculator" onload="load()">Grade Calculator:</h3>
+    <h3 onload="load()" id="finalGrade"></h3>
+    <button id="reload" onload="load()" onClick="window.location.reload()">Calculate Again</button>
+    <form id="inputForm" onload="load()">
         <label for="assignments">Assignments (enter just the number without the "%" sign):</label>
         <input type="number" id="assignments" name="assignments" step=".01" min="0" max="100"><br />
         <label for="groupProjects">Group Projects (enter just the number without the "%" sign):</label>
