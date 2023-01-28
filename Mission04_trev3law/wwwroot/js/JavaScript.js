@@ -1,14 +1,14 @@
 ﻿$("#submit").click(function () {
-    alert("working")
-    alert($("#assignments").val())
+    // calculate weighted final grade
     iFinalGrade = ($("#assignments").val() * .5) +
         ($("#groupProjects").val() * .1) +
         ($("#quizzes").val() * .1) +
         ($("#midtermExam").val() * .1) +
         ($("#finalExam").val() * .1) +
         ($("#intex").val() * .1)
+    iFinalGrade = iFinalGrade.toFixed(2)
 
-    // case to solve for letter grade
+    // solve for letter grade
     if (iFinalGrade >= 94) {
         sLetterGrade = 'A'
     } else if (iFinalGrade >= 90) {
@@ -35,27 +35,18 @@
         sLetterGrade = 'E'
     }
 
-    alert(iFinalGrade + ' - ' + sLetterGrade)
-})
-
-//$("#submit").click(function () {
-//    $("#inputForm").html() = (iFinalGrade + ' - ' + sLetterGrade)
-//})
-
-$("#submit").click(function () {
+    // hide form
     $("#inputForm").hide()
     $("#gradeCalculator").hide()
-})
 
-$("#submit").click(function () {
+    // show output on page
     $("#finalGrade").show()
-    $("#finalGrade").html('<b>Final Grade: </b>' + iFinalGrade + '% - ' + sLetterGrade)
-})
-
-$("#submit").click(function () {
+    $("#finalGrade").html('<b>Final Grade: </b>' + iFinalGrade + '%' + '<br>' + '<b>Letter Grade: </b>' + sLetterGrade)
     $("#reload").show()
+
 })
 
+// define which elements will be shown when the page first loads
 function load() {
     $("#inputForm").show()
     $("#gradeCalculator").show()
