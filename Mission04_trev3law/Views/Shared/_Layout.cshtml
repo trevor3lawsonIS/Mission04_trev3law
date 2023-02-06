@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"]</title>
+    <link rel="icon" href="~/img/byu2.png" type="image/icon type">
+    <link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/cs/myStyles.css" rel="stylesheet" />
+</head>
+<body>
+    <nav>
+        <a asp-controller="Mission" asp-action="Index">Home</a>
+        <a asp-controller="Mission" asp-action="GradeCalculator">Grade Calculator</a>
+    </nav>
+    <div>
+        @RenderBody()
+    </div>
+
+    <script src="~/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/jquery/jquery-3.6.3.min.js"></script>
+    <script src="~/js/JavaScript.js"></script>
+</body>
+</html>

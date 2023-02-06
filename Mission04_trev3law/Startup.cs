@@ -16,12 +16,12 @@ namespace Mission04_trev3law
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseDefaultFiles();
             app.UseStaticFiles();
 
             if (env.IsDevelopment())
@@ -33,10 +33,10 @@ namespace Mission04_trev3law
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Mission}/{action=index}/{id?}"
+                );
             });
         }
     }
