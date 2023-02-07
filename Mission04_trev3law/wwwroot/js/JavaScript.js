@@ -5,8 +5,8 @@
         ($("#quizzes").val() * .1) +
         ($("#midtermExam").val() * .1) +
         ($("#finalExam").val() * .1) +
-        ($("#intex").val() * .1)
-    iFinalGrade = iFinalGrade.toFixed(2)
+        ($("#intex").val() * .1);
+    iFinalGrade = iFinalGrade.toFixed(2);
 
     // solve for letter grade
     if (iFinalGrade >= 94) {
@@ -33,16 +33,19 @@
         sLetterGrade = 'D-'
     } else {
         sLetterGrade = 'E'
-    }
+    };
+
+    alert("Final Grade: " + iFinalGrade + "%" + "\n" +
+        "Letter Grade: " + sLetterGrade);
 
     // hide form
-    $("#inputForm").hide()
-    $("#gradeCalculator").hide()
+    $("#inputForm").hide();
+    $("#gradeCalculator").hide();
 
     // show output on page
-    $("#finalGrade").show()
-    $("#finalGrade").html('<b>Final Grade: </b>' + iFinalGrade + '%' + '<br>' + '<b>Letter Grade: </b>' + sLetterGrade)
-    $("#reload").show()
+    $("#finalGrade").show();
+    $("#finalGrade").html('<b>Final Grade: </b>' + iFinalGrade + '%' + '<br>' + '<b>Letter Grade: </b>' + sLetterGrade);
+    $("#reload").show();
 
 })
 

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Mission04_trev3law.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,14 @@ namespace Mission04_trev3law.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult GradeCalculator()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult GradeCalculator(GradeModel model)
         {
             return View();
         }
